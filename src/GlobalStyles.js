@@ -21,10 +21,11 @@ const GlobalStyle = createGlobalStyle`
             background: #ccc;
         }
         ::-webkit-scrollbar-thumb{
-            background: linear-gradient(180deg, #7F41DB 0%, #022894 100%);
+            background: linear-gradient(180deg, #000000 0%, #FFFFFF, #FFCC00 100%);
             border-radius: 24px;
         }
     }
+    
     a{
         color: inherit;
         font-family: inherit;
