@@ -32,8 +32,11 @@ const FeatureContentStyled = styled.div`
   margin: 10% auto;
   width: 95%;
   border-radius: 33px;
-  padding: 35px 0px;
- border: 10px solid red;
+  padding: 20px 0px;
+  .title-con{
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+  }
   .features {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +45,7 @@ const FeatureContentStyled = styled.div`
     padding: 0 2rem;
     padding-top: 2rem;
     .feature {
-      border: 3px solid blue;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       flex: 0 0 calc(30% - 20px);
       background-color: #ffcc00;
       padding: 20px;
@@ -81,8 +84,8 @@ const FeatureContentStyled = styled.div`
         border-bottom-right-radius: 20px;
         border-bottom-left-radius: 20px;
       }
-      p{
-          padding-top: 20px
+      p {
+        padding-top: 20px;
       }
       .user {
         padding-top: 0.2rem;

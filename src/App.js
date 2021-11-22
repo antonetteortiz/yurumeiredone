@@ -2,6 +2,7 @@
 import Nav from "./components/Nav";
 import HomeFeature from "./components/HomeFeature";
 import FeatureContent from "./components/FeatureContent";
+import FAQ from "./components/FAQ";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <HomeFeature />
       <FeatureContent />
+      <FAQ />
     </div>
   );
 }
