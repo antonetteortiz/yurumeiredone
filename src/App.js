@@ -2,7 +2,8 @@
 import Nav from "./components/Nav";
 import HomeFeature from "./components/HomeFeature";
 import FeatureContent from "./components/FeatureContent";
-import FAQ from "./components/FAQ";
+import Questions from "./components/Questions";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Nav />
       <HomeFeature />
       <FeatureContent />
-      <FAQ />
+      <Questions />
+      <Contact />
     </div>
   );
 }

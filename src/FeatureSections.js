@@ -30,10 +30,10 @@ const FeatureSections = [
         content: 'Garifuna is a minority language widely spoken in villages of Garifuna people in the western part of the northern coast of Central America.'
     },
     {
-        id: 4,
+        id: 5,
         image: traditions,
         title: 'Traditions', 
-        content: 'The Garifuna have a rich heritage with roots in both African and local cultures. Their traditional music includes work songs, hymns, lullabies, ballads, and healing songs. It shows an African influence in call-and-response song patterns and complex drum rhythms.'
+        content: 'The Garifuna have a rich heritage with roots in both African and local cultures. Their traditional music includes work songs, hymns, lullabies, ballads, and healing songs. It shows an African influence in call-and-response song patterns and complex drum rhythms. Some songs are sung during daily tasks, such as the baking of cassava bread (ereba)'
     },
 ]
 
