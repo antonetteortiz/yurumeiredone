@@ -7,9 +7,11 @@ function HomeFeature() {
     <HomeFeatureStyled>
       <div className="mainContent">
         <div className="left">
+          <div className="heading">
           <h1>
             Preserving our <br /> cultural legacy.
           </h1>
+          </div>
           <p>
             <span className="yurumei">YURUMEI</span>, is a global community
             whose sole purpose is to promote the preservation and protection of
@@ -76,14 +78,16 @@ const HomeFeatureStyled = styled.div`
     grid-template-columns: repeat(2, 2fr);
     height: 100%;
     width: 100%;
+    padding-bottom: 5rem;
     .left {
       display: flex;
-      /* justify-content: center; */
       padding-top: 6rem;
       flex-direction: column;
+      .heading{
+        padding-bottom: 1rem;
+      }
       h1 {
-        font-size: 5rem;
-        /* padding: 1.8rem 0; */
+        font-size: 4rem;
       }
       p {
         font-size: 1.5rem;
@@ -101,6 +105,7 @@ const HomeFeatureStyled = styled.div`
       }
     }
     .right {
+      margin-top: 3rem;
       img {
         width: 110%;
       }
@@ -114,9 +119,8 @@ const HomeFeatureStyled = styled.div`
       }
 
       .home__social-follow {
-        font-weight: var(--font-medium);
-        font-size: var(--smaller-font-size);
-        color: var(--first-color);
+        font-weight: 500;
+        font-size: 1.2rem;
         position: relative;
         transform: rotate(90deg);
       }
@@ -126,7 +130,6 @@ const HomeFeatureStyled = styled.div`
         position: absolute;
         width: 1rem;
         height: 2px;
-        background-color: var(--first-color);
         right: -45%;
         top: 50%;
       }
@@ -139,7 +142,6 @@ const HomeFeatureStyled = styled.div`
 
       .home__social-link {
         font-size: 1rem;
-        color: var(--first-color);
         transition: 0.3s;
       }
 

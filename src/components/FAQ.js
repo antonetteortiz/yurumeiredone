@@ -56,8 +56,8 @@ const FAQStyled = styled.div`
     font-size: 1rem;
     font-weight: 600;
     padding-left: 60px;
-    color: #FFCC00;
-    /* padding: 0 1.25rem 1.25rem 2.5rem; */
+    color: #000000;
+    background-color: #FFCC00;
   }
 
   .questions__header {

@@ -5,41 +5,6 @@ import { InnerLayout } from "../Layouts";
 import FAQ from "./FAQ";
 
 function Questions() {
-
-
-  // const accordionItems = document.querySelectorAll(".questions__item");
-
-  // accordionItems.forEach((item) => {
-  //   const accordionHeader = item.querySelector(".questions__header");
-
-  //   accordionHeader.OnClick={(event)=>{
-  //     console.log('On click')
-  //   }}
-
-    // accordionHeader.OnClick={(e) => {
-    //   const openItem = document.querySelector(".accordion-open");
-
-    //   toggleItem(e);
-
-    //   if (openItem && openItem !== item) {
-    //     toggleItem(openItem);
-    //   }
-    // }}
-
-  // });
-
-  // const toggleItem = (item) => {
-  //   const accordionContent = item.querySelector(".questions__content");
-
-  //   if (item.classList.contains("accordion-open")) {
-  //     accordionContent.removeAttribute("style");
-  //     item.classList.remove("accordion-open");
-  //   } else {
-  //     accordionContent.style.height = accordionContent.scrollHeight + "px";
-  //     item.classList.add("accordion-open");
-  //   }
-  // };
-
   return (
     <FAQStyled>
       <InnerLayout>

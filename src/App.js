@@ -4,6 +4,7 @@ import HomeFeature from "./components/HomeFeature";
 import FeatureContent from "./components/FeatureContent";
 import Questions from "./components/Questions";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <FeatureContent />
       <Questions />
       <Contact />
+      <Footer />
     </div>
   );
 }
