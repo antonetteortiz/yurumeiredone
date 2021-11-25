@@ -40,6 +40,7 @@ const FeatureContentStyled = styled.div`
   .features {
     display: flex;
     flex-wrap: wrap;
+    gap:60px;
     justify-content: center;
     width: 100%;
     padding: 0 2rem;
@@ -65,10 +66,8 @@ const FeatureContentStyled = styled.div`
           object-fit: cover;
           border-top-right-radius: 20px;
           border-top-left-radius: 20px;
-          /* filter: grayscale(50%); */
           &:hover {
             transform: scale(1.2) rotate(10deg);
-            /* filter: grayscale(0); */
           }
         }
       }

@@ -9,17 +9,19 @@ function Footer() {
       <InnerLayout>
         <footer>
           <div>
-            <div className="footer__content">
+            <div className="logo">
               <a href="#" className="footer__logo">
                 <img src={logo} />
                 <h1>YURUMEI</h1>
               </a>
+            </div>
 
+            <div className="footer__content">
               <h3 className="footer__title">
                 Subscribe to our newsletter <br /> to stay update
               </h3>
 
-              <div className="footer__subscribe">
+              {/* <div className="footer__subscribe">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -30,7 +32,7 @@ function Footer() {
                   Subscribe
                   <i className="ri-arrow-right-up-line button__icon"></i>
                 </button>
-              </div>
+              </div> */}
             </div>
 
             <div className="footer__content">
@@ -72,7 +74,9 @@ function Footer() {
             </div>
           </div>
 
-          <p className="footer__copy">&#169; YURUMEI. All rigths reserved</p>
+          <div className="copyright">
+            <p className="footer__copy">&#169; YURUMEI All RIGHTS RESERVED</p>
+          </div>
         </footer>
       </InnerLayout>
     </FooterStyled>
@@ -80,17 +84,24 @@ function Footer() {
 }
 const FooterStyled = styled.div`
   background-color: #ffcc00;
-.footer__content{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) 
-}
-
-
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap:60px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2rem;
+    padding-top: 2rem;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    border: 2px solid green;
+  }
   .footer__logo {
     border: 3px solid red;
     display: inline-flex;
     align-items: center;
-    column-gap: 0.5rem;
+    margin-top: 0;
     text-transform: uppercase;
     font-weight: 700;
     transition: 0.3s;
@@ -161,6 +172,11 @@ const FooterStyled = styled.div`
   }
   .footer__card {
     width: 35px;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 2rem;
+    border: 2px solid purple;
   }
 `;
 export default Footer;
