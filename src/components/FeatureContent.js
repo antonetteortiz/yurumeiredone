@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { InnerLayout, SectionSyled } from "../Layouts";
 import features from "../FeatureSections";
 
 function FeatureContent() {

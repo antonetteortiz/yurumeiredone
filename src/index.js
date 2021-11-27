@@ -1,14 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import GlobalStyle from './GlobalStyles';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Router} from "react-router";
+import { createBrowserHistory } from "history";
+import Routes from "./routes";
+import GlobalStyle from "./GlobalStyles";
+
+const customHistory = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <div>
+      <Router history={customHistory}>
+        <GlobalStyle />
+        {Routes}
+      </Router>
+    </div>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-

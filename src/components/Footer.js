@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../img/logo/yurumeifavicon.svg";
-import { InnerLayout } from "../Layouts";
 
 function Footer() {
-  let date = new Date().getFullYear() + "YURUMEI";
   return (
     <FooterStyled>
-      {/* <InnerLayout> */}
       <div className="logo">
         <a className="logo" href="">
           <img src={logo} alt="" />
@@ -78,20 +75,16 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer_bottom"></div>
-
       <div className="copyright">
         <span>Copyright © YURUMEI {new Date().getFullYear()}</span>
       </div>
-
-      {/* </InnerLayout> */}
     </FooterStyled>
   );
 }
 const FooterStyled = styled.div`
   background-color: #000000;
   color: #ffcc00;
-  min-height: 600px;
+  max-height: 500px;
   width: 100%;
   padding: 3rem calc((100vw - 1300px) / 2);
   .logo {
@@ -157,7 +150,8 @@ const FooterStyled = styled.div`
 
   .copyright {
     text-align: center;
-    margin-top: 13rem;
+    align-items: flex-end;
+    /* margin-top: 13rem; */
   }
 `;
 export default Footer;
