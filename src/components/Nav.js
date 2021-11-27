@@ -5,7 +5,7 @@ import logo from "../img/logo/yurumeifavicon.svg";
 function Nav() {
   return (
     <HeaderStyled>
-      <a className="logo">
+      <a className="logo" href="">
         <img src={logo} alt="" /> 
         
             <h1>YURUMEI</h1>

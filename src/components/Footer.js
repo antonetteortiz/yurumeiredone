@@ -4,179 +4,160 @@ import logo from "../img/logo/yurumeifavicon.svg";
 import { InnerLayout } from "../Layouts";
 
 function Footer() {
+  let date = new Date().getFullYear() + "YURUMEI";
   return (
     <FooterStyled>
-      <InnerLayout>
-        <footer>
-          <div>
-            <div className="logo">
-              <a href="#" className="footer__logo">
-                <img src={logo} />
-                <h1>YURUMEI</h1>
-              </a>
-            </div>
+      {/* <InnerLayout> */}
+      <div className="logo">
+        <a className="logo" href="">
+          <img src={logo} alt="" />
 
-            <div className="footer__content">
-              <h3 className="footer__title">
-                Subscribe to our newsletter <br /> to stay update
-              </h3>
+          <h1>YURUMEI</h1>
+        </a>
+      </div>
+      <div className="footer_top">
+        <div className="quote">
+          <h3>
+            Preserving our <br /> cultural legacy
+          </h3>
+        </div>
 
-              {/* <div className="footer__subscribe">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="footer__input"
-                />
+        <div className="footer_info">
+          <h4>Stay Connected</h4>
+          <p>
+            Join our community and stay connected <br /> by signing up for our
+            newsletter
+          </p>
+          <div class="subscribe">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="footer__input"
+            />
 
-                <button className="button button--flex footer__button">
-                  Subscribe
-                  <i className="ri-arrow-right-up-line button__icon"></i>
-                </button>
-              </div> */}
-            </div>
-
-            <div className="footer__content">
-              <h3 className="footer__title">Our Address</h3>
-
-              <ul className="footer__data">
-                <li className="footer__information">Washington, DC </li>
-                <li className="footer__information">USA 20011</li>
-              </ul>
-            </div>
-
-            <div className="footer__content">
-              <h3 className="footer__title">Contact Us</h3>
-
-              <ul className="footer__data">
-                <li className="footer__information">001 917 213 2435</li>
-
-                <div className="footer__social">
-                  <a
-                    href="https://www.facebook.com/"
-                    className="footer__social-link"
-                  >
-                    <i className="ri-facebook-fill"></i>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/"
-                    className="footer__social-link"
-                  >
-                    <i className="ri-instagram-line"></i>
-                  </a>
-                  <a
-                    href="https://twitter.com/"
-                    className="footer__social-link"
-                  >
-                    <i className="ri-twitter-fill"></i>
-                  </a>
-                </div>
-              </ul>
+            <button class="button">
+              Subscribe
+              <i class="ri-arrow-right-up-line button__icon" />
+            </button>
+            <div className="social">
+              <div className="socialIcon">
+                <a href="https://www.facebook.com/" className="socialLink">
+                  <i className="ri-facebook-fill"></i>
+                </a>
+              </div>
+              <div className="socialIcon">
+                <a href="https://www.instagram.com/" className="socialLink">
+                  <i className="ri-instagram-line"></i>
+                </a>
+              </div>
+              <div className="socialIcon">
+                <a href="https://www.youtube.com/" className="socialLink">
+                  <i className="ri-youtube-fill"></i>
+                </a>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="copyright">
-            <p className="footer__copy">&#169; YURUMEI All RIGHTS RESERVED</p>
-          </div>
-        </footer>
-      </InnerLayout>
+        <div className="footer_info">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              Email:  
+              <span >
+                <a a href="mailto:yurumei@gmail.com?subject=Yurumei!" className="contact">
+                yurumei@gmail.com
+                </a>
+              </span>
+            </li>
+            <li>
+              Telephone: <span className="contact" className="contact">202 358 1789</span>
+            </li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer_bottom"></div>
+
+      <div className="copyright">
+        <span>Copyright © YURUMEI {new Date().getFullYear()}</span>
+      </div>
+
+      {/* </InnerLayout> */}
     </FooterStyled>
   );
 }
 const FooterStyled = styled.div`
-  background-color: #ffcc00;
-  .footer__content {
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    gap:60px;
-    justify-content: center;
-    width: 100%;
-    padding: 0 2rem;
-    padding-top: 2rem;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-    border: 2px solid green;
-  }
-  .footer__logo {
-    border: 3px solid red;
-    display: inline-flex;
+  background-color: #000000;
+  color: #ffcc00;
+  min-height: 600px;
+  width: 100%;
+  padding: 3rem calc((100vw - 1300px) / 2);
+  .logo {
+    display: inline-block;
     align-items: center;
-    margin-top: 0;
     text-transform: uppercase;
-    font-weight: 700;
     transition: 0.3s;
+    img {
+      height: 50px;
+    }
     h1 {
+      float: right;
       letter-spacing: 0.5rem;
       font-size: 2rem;
+      color: #ffcc00;
+      padding-left: 5px;
+    }
+  }
+  h1:hover {
+    color: #ffffff;
+  }
+
+  .footer_top {
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    .quote {
+        flex-grow: 2;
+        
+        font-family: "Sedgwick Ave", cursive;
+        /* clamp changes the base font of the page and the size based on the viewport  */
+        /* clamp() function takes three comma separated expressions as its parameter, in the order of minimum value, preferred value, maximum value */
+        font-size: clamp(1rem, 10vw, 2.9rem);
+        font-weight: 300;
+    }
+    .footer_info {
+        /* padding: 1rem 0rem; */
+      padding: 1rem 4rem;
+    }
+    .social {
+      font-size: 2rem;
+      transition: 0.3s;
+      margin-top: 1rem;
+      .socialIcon {
+        padding-right: 1rem;
+        display: inline-flex;
+      }
+      .socialLink:hover {
+        transform: translateY(-0.25rem);
+      }
+    }
+    .contact {
+      font-style: italic;
+      /* color: white; */
+      padding-left: 5px;
+    }
+    .contact::hover{
+        color: #FFFFFF;
     }
   }
 
-  .footer__logo:hover {
-    color: #ffcc00;
-  }
-
-  .footer__title {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .footer__subscribe {
-    background-color: black;
-    padding: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 0.5rem;
-  }
-
-  .footer__input {
-    width: 70%;
-    padding: 0 0.5rem;
-    background: white;
-    color: black;
-    border: none;
-    outline: none;
-  }
-
-  .footer__button {
-    padding: 1rem;
-  }
-
-  .footer__data {
-    display: grid;
-    row-gap: 0.75rem;
-  }
-
-  .footer__information {
-    font-size: 0.8rem;
-  }
-
-  .footer__social {
-    display: inline-flex;
-    column-gap: 0.75rem;
-  }
-
-  .footer__social-link {
-    font-size: 1rem;
-    color: black;
-    transition: 0.3s;
-  }
-
-  .footer__social-link:hover {
-    transform: translateY(-0.25rem);
-  }
-
-  .footer__cards {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 0.5rem;
-  }
-  .footer__card {
-    width: 35px;
-  }
   .copyright {
     text-align: center;
-    margin-top: 2rem;
-    border: 2px solid purple;
+    margin-top: 13rem;
   }
 `;
 export default Footer;
