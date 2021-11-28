@@ -1,13 +1,15 @@
 import React from 'react'
 import Nav from '../components/Nav'
-import Language from '../components/language/Language'
+import Heading from '../components/language/LanguageHeading'
+import CommonPhrases from '../components/language/CommonPhrases'
 import Footer from '../components/Footer'
 
 function LanguagePage() {
     return (
         <div>
             <Nav />
-            <Language />
+            <Heading />
+            <CommonPhrases />
             <Footer />
         </div>
     )
