@@ -2,7 +2,7 @@
 // import Dugu from '../src/img/features/dugu.jpg'
 // import Jankunu from '../src/img/features/jankunu.jpg'
 
-const GarifunaTraditions = [
+const GarifunaTradition = [
     {
         id: 1,
         name: 'Garifuna World View',
@@ -20,7 +20,8 @@ const GarifunaTraditions = [
     {
         id: 3,
         name: 'Jankunu',
-        info:'Wanaragua or Jankunu is a dance performed every year during the Christmas season. The Jankunu dance is a satirical dance. This impressive art form is an amalgam of music, dance, mime and cultural symbolism in a formidable display of male supremacy, likely to reinforcee the Garinagu resistance to slavery. The dance is exclusively for males who dance and play drums. Women are allowed, but only as singers.  The men dress in English colonial garb and wear a white face mask, mocking the English slave master. The Jankunu leader ',
+        info:'Wanaragua or Jankunu is a dance performed every year during the Christmas season. The Jankunu dance is a satirical dance. This impressive art form is an amalgam of music, dance, mime and cultural symbolism in a formidable display of male supremacy, likely to reinforcee the Garinagu resistance to slavery. The dance is exclusively for males who dance and play drums. Women are allowed, but only as singers.  The men dress in English colonial garb and wear a white face mask, mocking the English slave master. The Jankunu leader does a preliminary short dance and approaches the drummers, there is lots of twirling with outstretched arms. The men and boys take turns in a taunting challenge to display their male prowess. ',
+        info2: 'The costumes are spectacular. Pants are black and the shirts are white and embellished with cross ribbons. This is reminiscent of the cross-gun belts of British military uniforms. The entire heaad of each dance is under wraps, turbans in a African- Arabic Bedouin style. The headdress is a royal crown embellished with paper rosettes, small round mirrors, and brightly colored feathers. The dancing men wear leaggins with bands of hundreds of small cowrie shells. The shells rattle and shake in the time with the call of the primero and segundo drums. These blend with the almost hypnotic singing of the women to create a mesmerizing effect.'
         // photo: Jankunu
     },
 ]
