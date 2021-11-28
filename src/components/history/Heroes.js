@@ -40,7 +40,6 @@ function Heroes() {
 
 const HeroesStyled = styled.div`
   padding: 4rem 5rem;
-  border: 0.5px solid green;
   .heading {
     font-size: 3rem;
   }

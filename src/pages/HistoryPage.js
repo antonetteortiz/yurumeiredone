@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import HistoryIntro from "../components/history/HistoryIntro";
 import Heroes from "../components/history/Heroes";
 import Footer from "../components/Footer";
+import AddAHero from "../components/history/AddAHero";
 
 function HistoryPage() {
   
@@ -15,6 +16,7 @@ function HistoryPage() {
         <HistoryPageStyled>
             <HistoryIntro />
             <Heroes />
+            <AddAHero />
         </HistoryPageStyled>
       <Footer />
     </div>
