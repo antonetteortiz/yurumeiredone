@@ -191,6 +191,7 @@ const AddAHeroStyled = styled.div`
       .button__icon {
         padding-left: 10px;
       }
+    }
   }
 `;
 
