@@ -18,8 +18,6 @@ function CommonPhrases() {
 
 const CommonPhrasesStyled = styled.div`
   padding: 4rem 10rem;
-  border: 5px solid green;
-  background-image: url('./phrasebackground.png');
   .phrasesContainer {
     display: flex;
     flex-direction: column;
