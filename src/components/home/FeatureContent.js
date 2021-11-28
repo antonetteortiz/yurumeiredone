@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import features from "../FeatureSections";
+import features from "../../data/FeatureSections";
 
 function FeatureContent() {
   return (

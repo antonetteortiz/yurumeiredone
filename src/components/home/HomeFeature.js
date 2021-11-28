@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DrumsOfMyFather from "../img/images/drums.png";
+import DrumsOfMyFather from "../../img/images/drums.png";
 
 function HomeFeature() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import FAQQuestions from "../../FAQQuestions";
-import { InnerLayout } from "../../Layouts";
+import FAQQuestions from "../../../data/FAQQuestions";
+import { InnerLayout } from "../../../Layouts";
 import FAQ from "./FAQ";
 
 function Questions() {

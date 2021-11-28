@@ -1,9 +1,9 @@
 import React from "react";
 import AOS from "aos";
 import styled from "styled-components";
-import GarifunaWomen from "../img/images/seniorgariwomen.png";
-import Dugu from "../img/features/dugu.jpg";
-import Jankunu from "../img/features/jankunu.jpg";
+import GarifunaWomen from "../../img/images/seniorgariwomen.png";
+import Dugu from "../../img/features/dugu.jpg";
+import Jankunu from "../../img/features/jankunu.jpg";
 
 AOS.init();
 
@@ -118,6 +118,7 @@ const TraditionsStyled = styled.div`
   width: 100%;
   height: 100%;
   padding: 4rem 10rem;
+  background: linear-gradient(180deg, #FFCC00 0%, #FFFFFF, #FFCC00 100%);
   .container {
     display: flex;
     flex-direction: row;
@@ -136,6 +137,8 @@ const TraditionsStyled = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        text-shadow: 5px 4px; 
         @media screen and (max-width: 768px) {
           width: 90%;
           height: 90%;
@@ -154,6 +157,8 @@ const TraditionsStyled = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        text-shadow: 5px 4px; 
         @media screen and (max-width: 768px) {
           width: 90%;
           height: 90%;

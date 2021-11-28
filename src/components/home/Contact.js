@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../Layouts";
+import { InnerLayout } from "../../Layouts";
 
 function Contact() {
   return (
