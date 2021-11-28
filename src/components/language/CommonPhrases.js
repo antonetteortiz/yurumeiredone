@@ -10,8 +10,7 @@ function CommonPhrases() {
         <div className="leftContainer">
           <h1 className="text">Common Garifuna Phrases and Expressions </h1>
           <Phrases />
-        </div>
-        
+        </div>        
       </div>
     </CommonPhrasesStyled>
   );
@@ -20,7 +19,7 @@ function CommonPhrases() {
 const CommonPhrasesStyled = styled.div`
   padding: 4rem 10rem;
   border: 5px solid green;
-  /* background-image: url(../../img/features/phrasesbackground.png); */
+  background-image: url('./phrasebackground.png');
   .phrasesContainer {
     display: flex;
     flex-direction: column;
