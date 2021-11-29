@@ -6,18 +6,25 @@ function FeatureContent() {
   return (
     <FeatureContentStyled>
       <div className="title-con">
-        <h1>Featured Sections</h1>
+        <h1>Garifuna Culture</h1>
       </div>
       <div className="features">
-        {features.map((features) => {
+        {features.map((feature) => {
           return (
             <div className="feature" key={features.id}>
               <div className="image">
-                <img src={features.image} alt="" />
+              <a href={feature.route}>
+                <img src={feature.image} alt="" />
+              </a>
               </div>
-              <h5>{features.title}</h5>
+              <h5>{feature.title}</h5>
               <div className="content">
-                <p>{features.content}</p>
+                <p>{feature.content}</p>
+              </div>
+              <div className="button">
+                <button>
+                  <a href={feature.route}>Learn More</a>
+                </button>
               </div>
             </div>
           );
@@ -32,14 +39,14 @@ const FeatureContentStyled = styled.div`
   width: 95%;
   border-radius: 33px;
   padding: 20px 0px;
-  .title-con{
-      text-transform: uppercase;
-      letter-spacing: .2rem;
+  .title-con {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
   }
   .features {
     display: flex;
     flex-wrap: wrap;
-    gap:60px;
+    gap: 60px;
     justify-content: center;
     width: 100%;
     padding: 0 2rem;
@@ -85,7 +92,24 @@ const FeatureContentStyled = styled.div`
       p {
         padding-top: 20px;
       }
-      .user {
+      .button{
+        display: flex;
+        align-items: flex-end;
+        button {
+          cursor: pointer;
+          border: none;
+          outline: none;
+          background-color: #000000;
+          color: #ffffff;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          font-weight: 500;
+          transition: 0.3s;
+          margin-top: 1.5rem;
+        }
+      }
+
+      /* .user {
         padding-top: 0.2rem;
         padding-bottom: 1.5rem;
         display: flex;
@@ -95,7 +119,7 @@ const FeatureContentStyled = styled.div`
           padding-right: 0.4rem;
           opacity: 0.5;
         }
-      }
+      } */
     }
   }
 `;
