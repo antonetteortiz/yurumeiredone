@@ -35,18 +35,16 @@ function Albums() {
 
   let musicList = music.map((album, i) => {
     return (
-      <div className="container">
-        <div className="musicContainer" key={i}>
-          <div className="image">
-            <img src={album.artwork} alt="..." />
-          </div>
-          <div className="musicInfo">
-            <h5>{album.title}</h5>
-            <h6>{album.artistName}</h6>
-            <a href={album.link} target="_blank">
-              <p>Listen here</p>
-            </a>
-          </div>
+      <div className="musicContainer" key={i}>
+        <div className="image">
+          <img src={album.artwork} alt="..." />
+        </div>
+        <div className="musicInfo">
+          <h5>{album.title}</h5>
+          <h6>{album.artistName}</h6>
+          <a href={album.link} target="_blank">
+            <p>Listen here</p>
+          </a>
         </div>
       </div>
     );
@@ -54,16 +52,16 @@ function Albums() {
 
   let filteredMusicList = filteredList.map((album, i) => {
     return (
-      <div>
-        <div key={i}>
+      <div className="musicContainer" key={i}>
+        <div className="image">
           <img src={album.artwork} alt="..." />
-          <div>
-            <h3>{album.title}</h3>
-            <h6>{album.artistName}</h6>
-            <a href={album.link}>
-              <p>Listen here</p>
-            </a>
-          </div>
+        </div>
+        <div className="musicInfo">
+          <h3>{album.title}</h3>
+          <h6>{album.artistName}</h6>
+          <a href={album.link}>
+            <p>Listen here</p>
+          </a>
         </div>
       </div>
     );
@@ -71,31 +69,27 @@ function Albums() {
 
   return (
     <AlbumsStyled>
-      <div>
+      <div className="container">
         <h1>Garifuna Artist</h1>
         <div>
-          <div>
-            <div>
-              <form>
-                <input
-                  type="text"
-                  placeholder="Enter Artist Name"
-                  value={artistSearch}
-                  onChange={searchArtist}
-                />
+          <form>
+            <input
+              type="text"
+              placeholder="Enter Artist Name"
+              value={artistSearch}
+              onChange={searchArtist}
+            />
 
-                <button type="submit" onClick={() => searchArtist()}>
-                  Search
-                </button>
-              </form>
+            <button type="submit" onClick={() => searchArtist()}>
+              Search
+            </button>
+          </form>
 
-              {/* <Link to="/createmusic"> */}
-              <button type="submit">Add Artist</button>
-              {/* </Link> */}
-            </div>
-          </div>
+          {/* <Link to="/createmusic"> */}
+          <button type="submit">Add Artist</button>
+          {/* </Link> */}
         </div>
-        <div>{artistSearch.length > 1 ? filteredMusicList : musicList}</div>
+        {artistSearch.length > 1 ? filteredMusicList : musicList}
       </div>
     </AlbumsStyled>
   );
@@ -106,30 +100,30 @@ const AlbumsStyled = styled.div`
   padding: 2rem 15rem;
   font-size: 1.5rem;
   display: flex;
-  flex-wrap: wrap;
-  .musicContainer {
-    background-color: #000000;
-    color: #ffcc00;
-    border-radius: 0.25rem;
-    padding: 2rem;
-    margin: 2rem;
-    width: 40rem;
+  flex-direction: column;
+  .container {
     display: flex;
-    .image {
-      width: 200px;
-      img {
+    flex-direction: column;
+    .musicContainer {
+      background-color: #000000;
+      color: #ffcc00;
+      border-radius: 0.25rem;
+      padding: 2rem;
+      margin: 2rem;
+      width: 40rem;
+      display: flex;
+      flex-direction: row;
+      .image {
         width: 200px;
-        border-radius: 25px;
+        img {
+          width: 200px;
+          border-radius: 25px;
+        }
       }
-    }
-    .musicInfo {
-      letter-spacing: 1px;
-      padding: 1rem;
-      align-items: center;
-      h3 {
-        font-size: 10px;
-      }
-      h6 {
+      .musicInfo {
+        letter-spacing: 1px;
+        padding: 1rem;
+        align-items: center;
       }
     }
   }
