@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Grid from "@material-ui/core/Grid";
 
 function Albums() {
   const [music, setMusic] = useState([]);
@@ -36,7 +35,7 @@ function Albums() {
 
   let musicList = music.map((album, i) => {
     return (
-      <div>
+      <div className="container">
         <div className="musicContainer" key={i}>
           <div className="image">
             <img src={album.artwork} alt="..." />
@@ -59,8 +58,8 @@ function Albums() {
         <div key={i}>
           <img src={album.artwork} alt="..." />
           <div>
-            <h5>{album.title}</h5>
-            <p>{album.artistName}</p>
+            <h3>{album.title}</h3>
+            <h6>{album.artistName}</h6>
             <a href={album.link}>
               <p>Listen here</p>
             </a>
@@ -105,18 +104,17 @@ function Albums() {
 const AlbumsStyled = styled.div`
   background-color: #ffcc00;
   padding: 2rem 15rem;
+  font-size: 1.5rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   .musicContainer {
     background-color: #000000;
-    color: white;
+    color: #ffcc00;
     border-radius: 0.25rem;
-    padding: 3rem;
-    border: 3px solid white;
+    padding: 2rem;
     margin: 2rem;
-    /* width: 50%; */
+    width: 40rem;
     display: flex;
-    flex-direction: row;
     .image {
       width: 200px;
       img {
@@ -125,8 +123,14 @@ const AlbumsStyled = styled.div`
       }
     }
     .musicInfo {
-      padding-left: 1rem;
+      letter-spacing: 1px;
+      padding: 1rem;
       align-items: center;
+      h3 {
+        font-size: 10px;
+      }
+      h6 {
+      }
     }
   }
 `;
