@@ -68,7 +68,7 @@ function Footer() {
               </span>
             </li>
             <li>
-              Telephone: <span className="contact" className="contact">202 358 1789</span>
+              Telephone: <span className="contact">202 358 1789</span>
             </li>
             <li>FAQ</li>
           </ul>
