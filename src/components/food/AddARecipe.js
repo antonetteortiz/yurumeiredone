@@ -46,14 +46,14 @@ function AddARecipe() {
           </div>
 
           <form
-            className="form"
-            style={{
-              width: "1200px",
-              margin: "0 auto",
-              padding: "20px 0px 80px, 0px",
-            }}
+          // className="form"
+          // style={{
+          //   width: "1200px",
+          //   margin: "0 auto",
+          //   padding: "20px 0px 80px, 0px",
+          // }}
           >
-            <div className="formLabel">
+            <div className="formCon">
               <label for="recipeInputField">Recipe</label>
               <input
                 type="text"
@@ -63,10 +63,10 @@ function AddARecipe() {
                 required
               />
               {/* <div className="invalid-feedback">Please create an artist.</div> */}
-              <small id="emailHelp" className="form-text text-muted"></small>
+              {/* <small id="emailHelp" className="form-text text-muted"></small> */}
             </div>
 
-            <div className="formLabel">
+            <div className="formCon">
               <label for="exampleInputEmail1">Recipe Description</label>
               <input
                 type="text"
@@ -74,10 +74,10 @@ function AddARecipe() {
                 aria-describedby="emailHelp"
                 onChange={(event) => setDescription(event.target.value)}
               />
-              <small id="emailHelp" className="form-text text-muted"></small>
+              {/* <small id="emailHelp" className="form-text text-muted"></small> */}
             </div>
 
-            <div className="formLabel">
+            <div className="formCon">
               <label for="exampleFormControlSelect1">Photo</label>
               <input
                 type="text"
@@ -85,12 +85,16 @@ function AddARecipe() {
                 aria-describedby="emailHelp"
                 onChange={(event) => setPhoto(event.target.value)}
               />
-              <small id="emailHelp" className="form-text text-muted">
+            <div className="hint">
+              <label for="hint" className="hint"></label>
+              <small id="emailHelp">
                 Please enter link to recipe photo (jpeg/png)
               </small>
             </div>
+            </div>
 
-            <div className="formLabel">
+
+            <div className="formCon">
               <label for="exampleInputEmail1">Servings</label>
               <select
                 class="form-control"
@@ -110,7 +114,7 @@ function AddARecipe() {
               </select>
             </div>
 
-            <div className="formLabel">
+            <div className="formCon">
               <label for="exampleInputEmail1">Ingredients</label>
               <textarea
                 class="form-control"
@@ -120,7 +124,7 @@ function AddARecipe() {
               ></textarea>
             </div>
 
-            <div className="formLabel">
+            <div className="formCon">
               <label for="exampleInputEmail1">Directions</label>
               <textarea
                 class="form-control"
@@ -130,7 +134,7 @@ function AddARecipe() {
               ></textarea>
             </div>
 
-            <div className="formLabel">
+            <div className="formCon">
               <label for="exampleFormControlSelect1">Author</label>
               <input
                 type="text"
@@ -182,8 +186,47 @@ function AddARecipe() {
 })();
 
 const AddARecipeStyled = styled.div`
-background: #ffcc00 ;
-
+  background: #ffcc00;
+  display: flex;
+  flex-direction: column;
+  label {
+    float: left;
+    text-align: left;
+    margin-right: 15px;
+    width: 9rem;
+  }
+  textarea:focus,
+  input:focus {
+    border: 2px solid white;
+  }
+  /* button, */
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    border-radius: 5px;
+    width: 40%;
+  }
+  button {
+    background-color: black;
+    color: #ffcc00;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-top: 1.5rem;
+  
+    text-transform: uppercase;
+    ;
+  }
+  .formCon {
+    padding: 0.5rem 0;
+  }
+  .hint {
+    padding-left: 10rem;
+    font-style: italic;
+  }
 `;
 
 export default AddARecipe;
