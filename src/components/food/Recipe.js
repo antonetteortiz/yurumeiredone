@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddARecipe() {
+function Recipe() {
     return (
         <div>
             
@@ -8,5 +8,4 @@ function AddARecipe() {
     )
 }
 
-export default AddARecipe
-
+export default Recipe
