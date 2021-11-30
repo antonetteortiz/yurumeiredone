@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import FoodHero from '../components/food/FoodHero'
 import AboutGarifunaFood from '../components/food/AboutGarifunaFood'
 import GarifunaDishes from '../components/food/GarifunaDishes'
+import AddARecipe from '../components/food/AddARecipe'
 
 
 function FoodPage() {
@@ -13,6 +14,7 @@ function FoodPage() {
             <FoodHero />
             <AboutGarifunaFood />
             <GarifunaDishes />
+            <AddARecipe />
             <Footer />
         </div>
     )
