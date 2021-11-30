@@ -8,9 +8,9 @@ function FillerContainer() {
     )
 }
 const FillerContainerStyled = styled.div`
-width: 100%;
-height: 600px;
-background-image: url('./phrasebackground.png');
-`
+  width: 100%;
+  height: 600px;
+  background-image: url("./assets/phrasebackground.png");
+`;
 
 export default FillerContainer

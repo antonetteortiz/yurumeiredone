@@ -125,9 +125,11 @@ const GarifunaDishesStyled = styled.div`
   padding: 4rem 15rem;
   display: flex;
   flex-wrap: wrap;
+  background: black;
   .heading {
     display: inline-block;
     width: 100%;
+    color: white;
     
     .searchInput {
       border: 3px solid black;
@@ -150,6 +152,7 @@ const GarifunaDishesStyled = styled.div`
     }
   }
   .cardContainer {
+    background: white;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
@@ -177,14 +180,14 @@ const GarifunaDishesStyled = styled.div`
       padding-top: 15px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      bottom: 20px;
     }
     button {
+      position: relative;
       font-size: 14px;
       text-transform: uppercase;
       border-radius: 4px;
       font-weight: 400;
-      /* width: 50%; */
       cursor: pointer;
       padding: 5px 5px;
     }
