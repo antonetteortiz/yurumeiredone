@@ -122,7 +122,7 @@ function GarifunaDishes() {
 }
 
 const GarifunaDishesStyled = styled.div`
-  padding: 4rem 15rem;
+  padding: 4rem 5rem;
   display: flex;
   flex-wrap: wrap;
   background: black;
@@ -130,7 +130,7 @@ const GarifunaDishesStyled = styled.div`
     display: inline-block;
     width: 100%;
     color: white;
-    
+
     .searchInput {
       border: 3px solid black;
       padding: 5px;
@@ -156,10 +156,11 @@ const GarifunaDishesStyled = styled.div`
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    width: 22.5vw;
+    width: 24vw;
     padding: 20px;
     margin: 2rem;
     border-radius: 12px;
+    box-shadow: 5px 5px 5px #ffcc00;
     img {
       height: 40vh;
       width: 100%;
@@ -172,9 +173,11 @@ const GarifunaDishesStyled = styled.div`
       border-top: 1px solid black;
       letter-spacing: 1px;
       text-transform: uppercase;
+      padding-top: 15px;
     }
     .recipeDescription {
       letter-spacing: 0.5px;
+      height: 30%;
     }
     .viewButton {
       padding-top: 15px;
@@ -183,13 +186,14 @@ const GarifunaDishesStyled = styled.div`
       bottom: 20px;
     }
     button {
-      position: relative;
-      font-size: 14px;
+      background-color: black;
+      color: #ffcc00;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: 0.3s;
+      margin-top: 1.5rem;
       text-transform: uppercase;
-      border-radius: 4px;
-      font-weight: 400;
-      cursor: pointer;
-      padding: 5px 5px;
     }
   }
 `;

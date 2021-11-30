@@ -42,7 +42,8 @@ function AddARecipe() {
       <InnerLayout>
         <div className="section">
           <div className="heading">
-            <h1>Add your recipe</h1>
+            <h1>ADD YOUR RECIPE</h1>
+            <p>Share with us your favorite Garifuna recipe!</p>
           </div>
 
           <form
@@ -216,9 +217,11 @@ const AddARecipeStyled = styled.div`
     font-weight: 500;
     transition: 0.3s;
     margin-top: 1.5rem;
-  
-    text-transform: uppercase;
+  text-transform: uppercase;
     ;
+  }
+  .heading {
+    padding-bottom: 15px;
   }
   .formCon {
     padding: 0.5rem 0;
