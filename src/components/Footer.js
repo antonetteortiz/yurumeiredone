@@ -6,7 +6,7 @@ function Footer() {
   return (
     <FooterStyled>
       <div className="logo">
-        <a className="logo" href="">
+        <a className="logo" href="#">
           <img src={logo} alt="" />
 
           <h1>YURUMEI</h1>

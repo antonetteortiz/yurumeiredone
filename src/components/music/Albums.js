@@ -42,7 +42,7 @@ function Albums() {
         <div className="musicInfo">
           <h5>{album.title}</h5>
           <h6>{album.artistName}</h6>
-          <a href={album.link} target="_blank">
+          <a href={album.link} target="_blank" rel="noreferrer">
             <p>Listen here</p>
           </a>
         </div>
