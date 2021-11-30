@@ -1,5 +1,5 @@
 import history from '../img/features/history.jpg'
-import food from '../img/features/food.jpg'
+import food from '../img/features/hudut.jpg'
 import music from '../img/features/music.jpg'
 import language from '../img/features/language.jpg'
 import traditions from '../img/features/traditions.jpg'
