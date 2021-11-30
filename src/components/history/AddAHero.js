@@ -9,6 +9,7 @@ function AddAHero() {
   const [photo, setPhoto] = useState();
   const [notableAccomplishments, setNotableAccomplishments] = useState();
   const [description, setDescription] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [success, setSuccess] = useState(false);
 
   const submitToApi = (e) => {

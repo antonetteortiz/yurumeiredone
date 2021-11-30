@@ -40,21 +40,21 @@ function HomeFeature() {
               <a
                 href="https://www.facebook.com/"
                 target="_blank"
-                className="home__social-link"
+                className="home__social-link" rel="noreferrer"
               >
                 <i className="ri-facebook-fill"></i>
               </a>
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
-                className="home__social-link"
+                className="home__social-link" rel="noreferrer"
               >
                 <i className="ri-instagram-line"></i>
               </a>
               <a
                 href="https://twitter.com/"
                 target="_blank"
-                className="home__social-link"
+                className="home__social-link" rel="noreferrer"
               >
                 <i className="ri-twitter-fill"></i>
               </a>

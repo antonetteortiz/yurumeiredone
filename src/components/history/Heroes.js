@@ -19,7 +19,7 @@ function Heroes() {
     return (
       <div className="heroCard">
         <div className="imageCon">
-          <img src={hero.photo} alt="Photo of Hero" />
+          <img src={hero.photo} alt="PhotoofHero" />
         </div>
         <h2 className="heroName">{hero.heroName}</h2>
 

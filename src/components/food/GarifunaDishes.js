@@ -12,7 +12,7 @@ function GarifunaDishes() {
     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
     fetch(apiUrl)
       .then((data) => data.json())
-      .then((recipe) => {
+      .then((recipes) => {
         setRecipes(recipes);
         console.log(recipes);
       })
