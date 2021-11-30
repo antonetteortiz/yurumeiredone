@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { IoSearchOutline } from "react-icons/io5";
 
 function GarifunaDishes() {
   const [recipes, setRecipes] = useState([{}]);
@@ -59,7 +58,9 @@ function GarifunaDishes() {
 
         {/* action container */}
         <div className="viewButton">
-          <button>View Reciepe</button>
+          <button>
+            <a href={`/food/${recipe._id}`}>View Recipe</a>
+          </button>
         </div>
         {/* action container END */}
       </div>
@@ -87,7 +88,9 @@ function GarifunaDishes() {
 
         {/* action container */}
         <div className="viewButton">
-          <button>View</button>
+          <button>
+            <a href={`/food/${recipe._id}`}>View Recipe</a>
+          </button>
         </div>
         {/* action container END */}
       </div>
