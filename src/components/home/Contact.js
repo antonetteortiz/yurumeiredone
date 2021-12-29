@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { InnerLayout } from "../../Layouts";
 
 function Contact() {
+
+
   return (
     <ContactStyled>
       <InnerLayout>
@@ -17,7 +19,7 @@ function Contact() {
                     Call or text us for instant support
                   </h3>
                   <span className="contact__description">
-                    <i className="ri-phone-line contact__icon"/>
+                    <i className="ri-phone-line contact__icon" />
                     001 917 213 2435
                   </span>
                 </div>
@@ -25,7 +27,7 @@ function Contact() {
                 <div className="contact__information">
                   <h3 className="contact__subtitle">Write us by mail</h3>
                   <span className="contact__description">
-                    <i className="ri-mail-line contact__icon"/>
+                    <i className="ri-mail-line contact__icon" />
                     yurumei@gmail.com
                   </span>
                 </div>
@@ -33,11 +35,22 @@ function Contact() {
             </div>
 
             <div className="form_container">
-              <form  className="contact__form">
+              <form className="contact__form">
                 <div className="contact__inputs">
                   <div className="contact__content">
                     <label for="" className="contact__label">
-                      Email
+                      Name
+                    </label>
+                    <input
+                      type="email"
+                      placeholder=" "
+                      className="contact__input"
+                    />
+                  </div>
+
+                  <div className="contact__content">
+                    <label for="" className="contact__label">
+                      Email Address
                     </label>
                     <input
                       type="email"
@@ -183,3 +196,14 @@ const ContactStyled = styled.div`
   }
 `;
 export default Contact;
+
+
+{/* <div className="h-screen w-screen flex justify-center items-center px-8">
+  <div className="w-2/5">
+    <div>
+      <p className="text-center text-purple-500 text-xs">
+        &copy;2021 All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>; */}

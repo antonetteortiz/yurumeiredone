@@ -4,6 +4,7 @@ import { Router} from "react-router";
 import { createBrowserHistory } from "history";
 import Routes from "./routes";
 import GlobalStyle from "./GlobalStyles";
+import "./styles/index.css"
 
 const customHistory = createBrowserHistory();
 
