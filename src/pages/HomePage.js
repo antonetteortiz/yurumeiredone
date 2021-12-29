@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import HomeFeature from "../components/home/HomeFeature";
 import FeatureContent from "../components/home/FeatureContent";
 import Questions from "../components/home/faq/Questions";
-import Contact from "../components/home/Contact";
+import Contact from "../components/home/ContactSection";
 import Footer from "../components/Footer";
 
 function HomePage() {
