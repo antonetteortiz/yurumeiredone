@@ -17,7 +17,7 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/contact", { ...contact })
+      .post("https://yurumeiapi.herokuapp.com/contact", { ...contact })
       .then((response) => {
         setResult(response.data);
         setContact({ name: "", emailAddress: "", subject: "", message: "" });
