@@ -78,7 +78,7 @@ const HomeFeatureStyled = styled.div`
     grid-template-columns: repeat(2, 2fr);
     height: 100%;
     width: 100%;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
     .left {
       display: flex;
       padding-top: 6rem;

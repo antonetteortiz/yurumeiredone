@@ -6,8 +6,6 @@ function GarifunaDishes() {
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
-  // Fetching data from recipe API
-
   useEffect(() => {
     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
     fetch(apiUrl)
@@ -156,18 +154,23 @@ const GarifunaDishesStyled = styled.div`
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    width: 24vw;
+    width: 24.9vw;
     padding: 20px;
     margin: 2rem;
     border-radius: 12px;
     box-shadow: 5px 5px 5px #ffcc00;
+    @media only screen and (max-width 1450px) {
+      width: 450px;
+      border: 2px dotted purple;
+    }
     img {
-      height: 40vh;
+      height: 30vh;
       width: 100%;
       vertical-align: middle;
       object-fit: cover;
       overflow: hidden;
       padding-bottom: 5px;
+      
     }
     .recipeName {
       border-top: 1px solid black;

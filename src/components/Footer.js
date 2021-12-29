@@ -37,22 +37,22 @@ function Footer() {
               Subscribe
               <i class="ri-arrow-right-up-line button__icon" />
             </button>
-            <div className="social">
-              <div className="socialIcon">
-                <a href="https://www.facebook.com/" className="socialLink">
-                  <i className="ri-facebook-fill"></i>
-                </a>
-              </div>
-              <div className="socialIcon">
-                <a href="https://www.instagram.com/" className="socialLink">
-                  <i className="ri-instagram-line"></i>
-                </a>
-              </div>
-              <div className="socialIcon">
-                <a href="https://www.youtube.com/" className="socialLink">
-                  <i className="ri-youtube-fill"></i>
-                </a>
-              </div>
+          </div>
+          <div className="social">
+            <div className="socialIcon">
+              <a href="https://www.facebook.com/" className="socialLink">
+                <i className="ri-facebook-fill"></i>
+              </a>
+            </div>
+            <div className="socialIcon">
+              <a href="https://www.instagram.com/" className="socialLink">
+                <i className="ri-instagram-line"></i>
+              </a>
+            </div>
+            <div className="socialIcon">
+              <a href="https://www.youtube.com/" className="socialLink">
+                <i className="ri-youtube-fill"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -61,10 +61,14 @@ function Footer() {
           <h4>Contact Us</h4>
           <ul>
             <li>
-              Email:  
-              <span >
-                <a a href="mailto:yurumei@gmail.com?subject=Yurumei!" className="contact">
-                yurumei@gmail.com
+              Email:
+              <span>
+                <a
+                  a
+                  href="mailto:yurumei@gmail.com?subject=Yurumei!"
+                  className="contact"
+                >
+                  yurumei@gmail.com
                 </a>
               </span>
             </li>
@@ -112,19 +116,19 @@ const FooterStyled = styled.div`
     display: flex;
     flex-direction: row;
     @media screen and (max-width: 768px) {
-        flex-direction: column;
+      flex-direction: column;
     }
     .quote {
-        flex-grow: 2;
-        
-        font-family: "Sedgwick Ave", cursive;
-        /* clamp changes the base font of the page and the size based on the viewport  */
-        /* clamp() function takes three comma separated expressions as its parameter, in the order of minimum value, preferred value, maximum value */
-        font-size: clamp(1rem, 10vw, 2.9rem);
-        font-weight: 300;
+      flex-grow: 2;
+
+      font-family: "Sedgwick Ave", cursive;
+      /* clamp changes the base font of the page and the size based on the viewport  */
+      /* clamp() function takes three comma separated expressions as its parameter, in the order of minimum value, preferred value, maximum value */
+      font-size: clamp(1rem, 10vw, 2.9rem);
+      font-weight: 300;
     }
     .footer_info {
-        /* padding: 1rem 0rem; */
+      /* padding: 1rem 0rem; */
       padding: 1rem 4rem;
     }
     .social {
@@ -139,13 +143,26 @@ const FooterStyled = styled.div`
         transform: translateY(-0.25rem);
       }
     }
+    .button {
+      border: 3px solid black;
+      padding: 5px;
+      height: 28px;
+      width: 95px;
+      border-radius: 5px;
+      background: #ffcc00;
+      color: black;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-left: 1px;
+      text-transform: uppercase;
+    }
     .contact {
       font-style: italic;
       /* color: white; */
       padding-left: 5px;
     }
-    .contact::hover{
-        color: #FFFFFF;
+    .contact::hover {
+      color: #ffffff;
     }
   }
 

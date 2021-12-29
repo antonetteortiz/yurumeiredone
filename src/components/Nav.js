@@ -6,21 +6,23 @@ import logo from "../img/logo/yurumeifavicon.svg";
 function Nav() {
   return (
     <HeaderStyled>
-      <a className="logo" href="#">
-        <img src={logo} alt="" /> 
-        
-            <h1>YURUMEI</h1>
-        
+      <a className="logo" href="/">
+        <img src={logo} alt="" />
+
+        <h1>
+          {" "}
+          <a href="/">YURUMEI</a>
+        </h1>
       </a>
       <ul className="nav-items">
         <li>
-          <a href="#">HOME</a>
+          <a href="/">HOME</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#">ABOUT</a>
-        </li>
+        </li> */}
         <li>
-          <a href="#">FAQs</a>
+          <a href="/faq">FAQs</a>
         </li>
         <li>
           <a href="#">GARIFUNA CULTURE</a>
@@ -44,8 +46,8 @@ const HeaderStyled = styled.div`
     align-items: center;
     li {
       margin: 0 1rem;
-      letter-spacing: .2rem;
-      padding: .2rem .6rem;
+      letter-spacing: 0.2rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 10px;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
@@ -56,29 +58,26 @@ const HeaderStyled = styled.div`
     .primary-btn {
       margin-left: 3rem;
       background-color: rgba(255, 204, 0, 0.6);
-      
-      
     }
   }
 
   .logo {
     /* display: inline;
     width: 250px; */
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
     margin-top: 5px;
-    padding: .2rem .6rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 10px;
     cursor: pointer;
     &:hover {
-        background-color: rgba(255, 204, 0, 1);
-      }
+      background-color: rgba(255, 204, 0, 1);
+    }
     img {
       width: 60px;
     }
     h1 {
-        float: right;
-        padding-left: 5px;
-
+      float: right;
+      padding-left: 5px;
     }
   }
 `;

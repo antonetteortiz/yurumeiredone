@@ -13,9 +13,9 @@ function FeatureContent() {
           return (
             <div className="feature" key={features.id}>
               <div className="image">
-              <a href={feature.route}>
-                <img src={feature.image} alt="" />
-              </a>
+                <a href={feature.route}>
+                  <img src={feature.image} alt="" />
+                </a>
               </div>
               <h5>{feature.title}</h5>
               <div className="content">
@@ -77,6 +77,9 @@ const FeatureContentStyled = styled.div`
           }
         }
       }
+      .content {
+        height: 250px
+      }
       h5 {
         color: white;
         letter-spacing: 0.2rem;
@@ -92,9 +95,11 @@ const FeatureContentStyled = styled.div`
       p {
         padding-top: 20px;
       }
-      .button{
+      .button {
+        padding-top: 15px;
         display: flex;
-        align-items: flex-end;
+        justify-content: center;
+        bottom: 20px;
         button {
           cursor: pointer;
           border: none;

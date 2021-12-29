@@ -46,16 +46,9 @@ function AddARecipe() {
             <p>Share with us your favorite Garifuna recipe!</p>
           </div>
 
-          <form
-          // className="form"
-          // style={{
-          //   width: "1200px",
-          //   margin: "0 auto",
-          //   padding: "20px 0px 80px, 0px",
-          // }}
-          >
+          <form>
             <div className="formCon">
-              <label for="recipeInputField">Recipe</label>
+              <label for="recipeInputField">Recipe Name</label>
               <input
                 type="text"
                 className="formInput"
@@ -63,8 +56,6 @@ function AddARecipe() {
                 onChange={(event) => setRecipeName(event.target.value)}
                 required
               />
-              {/* <div className="invalid-feedback">Please create an artist.</div> */}
-              {/* <small id="emailHelp" className="form-text text-muted"></small> */}
             </div>
 
             <div className="formCon">
@@ -75,7 +66,7 @@ function AddARecipe() {
                 aria-describedby="emailHelp"
                 onChange={(event) => setDescription(event.target.value)}
               />
-              {/* <small id="emailHelp" className="form-text text-muted"></small> */}
+              
             </div>
 
             <div className="formCon">
@@ -160,31 +151,6 @@ function AddARecipe() {
   );
 }
 
-(function () {
-  window.addEventListener(
-    "load",
-    function () {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName("needs-validation");
-      // Loop over them and prevent submission
-      // eslint-disable-next-line no-unused-vars
-      var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener(
-          "submit",
-          function (event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      });
-    },
-    false
-  );
-})();
 
 const AddARecipeStyled = styled.div`
   background: #ffcc00;
