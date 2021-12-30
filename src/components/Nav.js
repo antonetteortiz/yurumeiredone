@@ -10,8 +10,7 @@ function Nav() {
         <img src={logo} alt="" />
 
         <h1>
-          {" "}
-          <a href="/">YURUMEI</a>
+        YURUMEI
         </h1>
       </a>
       <ul className="nav-items">
@@ -52,7 +51,8 @@ const HeaderStyled = styled.div`
       cursor: pointer;
       transition: all 0.4s ease-in-out;
       &:hover {
-        background-color: rgba(255, 204, 0, 1);
+        /* background-color: rgba(255, 204, 0, 1); */
+        text-decoration: underline;
       }
     }
     .primary-btn {
@@ -69,8 +69,30 @@ const HeaderStyled = styled.div`
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
     cursor: pointer;
-    &:hover {
-      background-color: rgba(255, 204, 0, 1);
+    text-transform: uppercase;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    :hover {
+      animation-name: bounce;
+      -moz-animation-name: bounce;
+      animation-timing-function: ease;
+    }
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
     img {
       width: 60px;
@@ -78,8 +100,37 @@ const HeaderStyled = styled.div`
     h1 {
       float: right;
       padding-left: 5px;
+      :hover {
+        text-decoration: underline;
+      }
     }
   }
 `;
 
 export default Nav;
+
+
+// .container {
+//     border-bottom: 2px solid #000000;
+//     display: flex;
+//     height: 200px;
+//     width: 100%;
+// }
+// .child {
+//     align-self: flex-end;
+//     width: 100px;
+//     height: 100px;
+//     background: #FFB6C1;
+//     animation-duration: 2s;
+//     animation-iteration-count: infinite;
+//     transform-origin: bottom;
+// }
+// .bounce:hover {
+//     animation-name: bounce;
+//     animation-timing-function: ease;
+// }
+// @keyframes bounce {
+//   0%   { transform: translateY(0); }
+//   50%  { transform: translateY(-100px); }
+//   100% { transform: translateY(0); }
+// }
