@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { InnerLayout } from "../../Layouts";
+import YouthAtYurumein from "../../img/images/commerce.jpg";
 
 function Contact() {
   const [contact, setContact] = useState({
@@ -19,7 +19,7 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/contact", { ...contact })
+      .post("https://yurumeiapi.herokuapp.com/contact", { ...contact })
       .then((response) => {
         setResult(response.data);
         setContact({ name: "", emailAddress: "", subject: "", message: "" });
@@ -42,7 +42,7 @@ function Contact() {
   };
 
   const contactForm = (
-    <div className="form_container">
+    <div className="contactFormContainer">
       <div className="successMessage">
         {result && (
           <p className={`${result.success ? null : "error"}`}>
@@ -50,65 +50,60 @@ function Contact() {
           </p>
         )}
       </div>
-      <form className="contact__form" onSubmit={sendEmail}>
-        <div className="contact__inputs">
-          <div className="contact__content">
-            <label for="" className="contact__label">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              placeholder=" "
-              value={contact.name}
-              className="contact__input"
-              onChange={onInputChange}
-            />
-          </div>
-
-          <div className="contact__content">
-            <label for="" className="contact__label">
-              Email Address
-            </label>
-            <input
-              type="email"
-              name="emailAddress"
-              placeholder=" "
-              value={contact.emailAddress}
-              className="contact__input"
-              onChange={onInputChange}
-            />
-          </div>
-
-          <div className="contact__content">
-            <label for="" className="contact__label">
-              Subject
-            </label>
-            <input
-              type="text"
-              name="subject"
-              placeholder=" "
-              value={contact.subject}
-              className="contact__input"
-              onChange={onInputChange}
-            />
-          </div>
-
-          <div className="contact__content contact__area">
-            <label for="" className="contact__label">
-              Message
-            </label>
-            <textarea
-              name="message"
-              placeholder=" "
-              value={contact.message}
-              className="contact__input"
-              onChange={onInputChange}
-            />
-          </div>
+      <div className="formHeading">
+      <h1>Let's talk.</h1>
+      <p>Share your excitement with us!</p>
+      </div>
+      <form onSubmit={sendEmail}>
+        <div>
+          <label for="">Name</label>
+          <input
+            type="text"
+            className="form-control"
+            value={contact.name}
+            onChange={onInputChange}
+            required
+          />
         </div>
 
-        <button className="button button--flex" type="submit">
+        <div>
+          <label for="">Email Address</label>
+          <input
+            type="email"
+            name="emailAddress"
+            placeholder=" "
+            value={contact.emailAddress}
+            className="contact__input"
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div>
+          <label for="">Subject</label>
+          <input
+            type="text"
+            name="subject"
+            placeholder=" "
+            value={contact.subject}
+            className="contact__input"
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div>
+          <label for="">Message</label>
+
+          <textarea
+            rows="4"
+            name="message"
+            placeholder=" "
+            value={contact.message}
+            className="contact__input"
+            onChange={onInputChange}
+          ></textarea>
+        </div>
+
+        <button type="submit">
           Send Message
           <i className="ri-arrow-right-up-line button__icon"></i>
         </button>
@@ -126,73 +121,124 @@ function Contact() {
     </div>
   );
 
-  
   return (
     <ContactStyled>
-      <InnerLayout>
-        <section className="section container">
-          <div className="contact__container">
-            <div className="contact__box">
-              <h2 className="section-title">Reach out to us today</h2>
-
-              <div className="contact__data">
-                <div className="contact__information">
-                  <h3 className="contact__subtitle">
-                    Call or text us for instant support
-                  </h3>
-                  <span className="contact__description">
-                    <i className="ri-phone-line contact__icon" />
-                    001 917 213 2435
-                  </span>
-                </div>
-
-                <div className="contact__information">
-                  <h3 className="contact__subtitle">Write us by mail</h3>
-                  <span className="contact__description">
-                    <i className="ri-mail-line contact__icon" />
-                    yurumei@gmail.com
-                  </span>
-                </div>
-              </div>
-            </div>
-            {isSuccess ? successMessage : contactForm}
+      <div className="section">
+        <div className="heading">
+          <div className="image">
+            <img src={YouthAtYurumein} alt="yurumei" />
           </div>
-        </section>
-      </InnerLayout>
+          <h2>We'd Love To Hear From You!</h2>
+          <div>
+            <h4 >Call or text us for instant support</h4>
+            <div className="contactInfo">
+
+            <span>
+              <i className="ri-phone-line icon" />
+              001 917 213 2435
+            </span>
+            </div>
+
+            <h4 >Write us by mail</h4>
+            <span>
+              <i className="ri-mail-line icon" />
+              yurumei@gmail.com
+            </span>
+          </div>
+        </div>
+        {isSuccess ? successMessage : contactForm}
+      </div>
     </ContactStyled>
   );
 }
 
 const ContactStyled = styled.div`
   .section {
-    padding: 2rem 0 1rem;
-    background-color: #ffcc00;
-    border-radius: 5px;
-  }
-
-  button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
-  h2 {
-    color: black;
-    font-weight: 600;
-  }
-  .successMessage {
     display: flex;
-    align-items: center;  
+    background-color: #ffcc00;
+    border-radius: 33px;
+    margin: 4rem 2rem;
+    .heading {
+      padding:  30px;
+      flex: 75%;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+      h2 {
+        padding: 20px 0;
+      }
+      .contactInfo {
+        padding-bottom: 30px;
+      }
+      .icon {
+        padding-right: 10px
+      }
+    }
+    
+    
+    .contactFormContainer{
+      /* padding: 3vw; */
+      padding: 40px;
+      /* display: flex; */
+      flex: 100%;
+      margin: 0 auto;
+      align-items: center;
+      border-left: 1px solid black;
+      label {
+        display: block;
+        text-align: left;
+        font-size: 20px;
+        /* margin-bottom: 10px; */
+      }
+      span {
+        font-size: 15px;
+        padding-left: 5px;
+      }
+      input,
+      textarea {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+        margin: 8px 0;
+        border: 0;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      button {
+        background-color: black;
+        color: #ffcc00;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: 0.3s;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        .button__icon {
+          padding-left: 10px;
+        }
+      }
+      .formHeading {
+        padding-bottom: 30px;
+      }
+      .successMessage {
+        display: flex;
+        align-items: center;  
+      }
+      
+      .success {
+        padding-top: 20px;
+      }
+      
+      .error {
+        color: #960303;
+      }
+    }
   }
 
-  .success {
-    padding-top: 20px;
-  }
-
-  .error {
-    color: #960303;
-  }
-
-  .contact__form {
+  /* .contact__form {
     height: 400px;
   }
   .button {
@@ -277,6 +323,6 @@ const ContactStyled = styled.div`
 
   .contact__area textarea {
     resize: none;
-  }
+  } */
 `;
 export default Contact;

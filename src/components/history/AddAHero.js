@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import hero from '../../img/images/chatpic.jpg'
+import hero from "../../img/images/chatpic.jpg";
 
 function AddAHero() {
   const [heroName, setheroName] = useState();
@@ -18,7 +18,7 @@ function AddAHero() {
     let heroInputField = document.querySelector("#heroInputField");
     if (heroInputField.value !== "") {
       axios
-        .post("https://yurumeiapi.herokuapp.com/Hero", {
+        .post("https://yurumeiapi.herokuapp.com/hero", {
           heroName,
           birthdate,
           photo,
@@ -38,7 +38,7 @@ function AddAHero() {
       <section className="section">
         <div className="heading">
           <div className="hero">
-          <img src={hero} alt="" />
+            <img src={hero} alt="" />
           </div>
           <h1>
             Know of Garifuna Hero <br />
@@ -50,7 +50,11 @@ function AddAHero() {
             <i className="ri-arrow-right-up-line button__icon"></i>
           </button> */}
           <p className="addHeroParagraph">
-            It is up to us to give our leaders and heroes their flowers. If you know anyone of Garifuna heritage that is doing something amazing to preserve and continue our ancestral traditions we'd love to know about them. Fill out this form and their information will be added to our site.
+            It is up to us to give our leaders and heroes their flowers. If you
+            know anyone of Garifuna heritage that is doing something amazing to
+            preserve and continue our ancestral traditions we'd love to know
+            about them. Fill out this form and their information will be added
+            to our site.
           </p>
         </div>
         <div className="heroForm">
@@ -120,7 +124,7 @@ function AddAHero() {
 }
 
 const AddAHeroStyled = styled.div`
-/* margin: 2rem 0; */
+  /* margin: 2rem 0; */
   .section {
     display: flex;
     padding: 2rem 15rem;
@@ -137,7 +141,7 @@ const AddAHeroStyled = styled.div`
       margin-bottom: 20px;
       img {
         width: 350px;
-      height: 325px;
+        height: 325px;
         object-fit: cover;
       }
     }
