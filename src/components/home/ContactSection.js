@@ -13,17 +13,23 @@ function Contact() {
   });
 
   const [result, setResult] = useState(null);
+  const [isSuccess, setSuccess] = useState(false);
+  const [hasError, setError] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
     axios
-      .post("https://yurumeiapi.herokuapp.com/contact", { ...contact })
+      .post("http://localhost:8080/contact", { ...contact })
       .then((response) => {
         setResult(response.data);
         setContact({ name: "", emailAddress: "", subject: "", message: "" });
+        setError(false);
+        setSuccess(true);
         console.log(contact);
       })
       .catch(() => {
+        setSuccess(false);
+        setError(true);
         setResult({
           success: false,
           message: "Something went wrong, please try again!",
@@ -35,6 +41,92 @@ function Contact() {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
 
+  const contactForm = (
+    <div className="form_container">
+      <div className="successMessage">
+        {result && (
+          <p className={`${result.success ? null : "error"}`}>
+            {hasError ? result.message : null}
+          </p>
+        )}
+      </div>
+      <form className="contact__form" onSubmit={sendEmail}>
+        <div className="contact__inputs">
+          <div className="contact__content">
+            <label for="" className="contact__label">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder=" "
+              value={contact.name}
+              className="contact__input"
+              onChange={onInputChange}
+            />
+          </div>
+
+          <div className="contact__content">
+            <label for="" className="contact__label">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="emailAddress"
+              placeholder=" "
+              value={contact.emailAddress}
+              className="contact__input"
+              onChange={onInputChange}
+            />
+          </div>
+
+          <div className="contact__content">
+            <label for="" className="contact__label">
+              Subject
+            </label>
+            <input
+              type="text"
+              name="subject"
+              placeholder=" "
+              value={contact.subject}
+              className="contact__input"
+              onChange={onInputChange}
+            />
+          </div>
+
+          <div className="contact__content contact__area">
+            <label for="" className="contact__label">
+              Message
+            </label>
+            <textarea
+              name="message"
+              placeholder=" "
+              value={contact.message}
+              className="contact__input"
+              onChange={onInputChange}
+            />
+          </div>
+        </div>
+
+        <button className="button button--flex" type="submit">
+          Send Message
+          <i className="ri-arrow-right-up-line button__icon"></i>
+        </button>
+      </form>
+    </div>
+  );
+
+  const successMessage = (
+    <div className="successMessage">
+      {result && (
+        <h3 className={`${result.success ? "success" : null}`}>
+          {isSuccess ? result.message : null}
+        </h3>
+      )}
+    </div>
+  );
+
+  
   return (
     <ContactStyled>
       <InnerLayout>
@@ -63,81 +155,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-
-            <div className="form_container">
-                <form className="contact__form" onSubmit={sendEmail}>
-                  <div className="contact__inputs">
-                    <div className="contact__content">
-                      <label for="" className="contact__label">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder=" "
-                        value={contact.name}
-                        className="contact__input"
-                        onChange={onInputChange}
-                      />
-                    </div>
-
-                    <div className="contact__content">
-                      <label for="" className="contact__label">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        name="emailAddress"
-                        placeholder=" "
-                        value={contact.emailAddress}
-                        className="contact__input"
-                        onChange={onInputChange}
-                      />
-                    </div>
-
-                    <div className="contact__content">
-                      <label for="" className="contact__label">
-                        Subject
-                      </label>
-                      <input
-                        type="text"
-                        name="subject"
-                        placeholder=" "
-                        value={contact.subject}
-                        className="contact__input"
-                        onChange={onInputChange}
-                      />
-                    </div>
-
-                    <div className="contact__content contact__area">
-                      <label for="" className="contact__label">
-                        Message
-                      </label>
-                      <textarea
-                        name="message"
-                        placeholder=" "
-                        value={contact.message}
-                        className="contact__input"
-                        onChange={onInputChange}
-                      />
-                    </div>
-                  </div>
-
-                  <button className="button button--flex" type="submit">
-                    Send Message
-                    <i className="ri-arrow-right-up-line button__icon"></i>
-                  </button>
-
-
-                </form>
-              <div className="successMessage">
-              {result && (
-                <p className={`${result.success ? "success" : "error"}`}>
-                  {result.message}
-                </p>
-              )}
-              </div>
-            </div>
+            {isSuccess ? successMessage : contactForm}
           </div>
         </section>
       </InnerLayout>
@@ -161,8 +179,13 @@ const ContactStyled = styled.div`
     color: black;
     font-weight: 600;
   }
+  .successMessage {
+    display: flex;
+    align-items: center;  
+  }
+
   .success {
-    color: #339901;
+    padding-top: 20px;
   }
 
   .error {
