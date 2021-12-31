@@ -78,6 +78,7 @@ function Nav() {
 }
 
 const HeaderStyled = styled.div`
+  font-family: "Poppins", sans-serif;
   height: 90px;
   margin: 20px 20px;
   display: flex;
@@ -120,6 +121,7 @@ const HeaderStyled = styled.div`
     h1 {
       float: right;
       padding-left: 5px;
+      font-family: "Poppins", serif;
     }
   }
   .nav-items {
@@ -127,6 +129,7 @@ const HeaderStyled = styled.div`
     text-align: right;
     /* position: relative; */
     li {
+      font-family: "Poppins", serif;
       margin-right: 0.8rem;
       letter-spacing: 0.2rem;
       padding: 0.2rem 0.6rem;
@@ -143,7 +146,7 @@ const HeaderStyled = styled.div`
       visibility: hidden;
     }
     .menu.active {
-      opacity: .8;
+      opacity: 0.8;
       visibility: visible;
       transform: translateY(0);
       text-decoration: none;
@@ -151,7 +154,6 @@ const HeaderStyled = styled.div`
       text-align: left;
       background-color: black;
       color: white;
-      
     }
   }
 `;

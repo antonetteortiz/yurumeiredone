@@ -78,7 +78,7 @@ const FeatureContentStyled = styled.div`
         }
       }
       .content {
-        height: 250px
+        height: 210px;
       }
       h5 {
         color: white;
@@ -86,7 +86,7 @@ const FeatureContentStyled = styled.div`
         text-transform: uppercase;
         font-weight: 500;
         font-size: 1.3rem;
-        padding: 0 35px;
+        padding: 5px 35px;
         text-align: center;
         background-color: #000000;
         border-bottom-right-radius: 20px;
@@ -101,6 +101,7 @@ const FeatureContentStyled = styled.div`
         justify-content: center;
         bottom: 20px;
         button {
+          text-transform: uppercase;
           cursor: pointer;
           border: none;
           outline: none;

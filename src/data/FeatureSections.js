@@ -23,7 +23,7 @@ const FeatureSections = [
         id: 3,
         image: music,
         title: 'Music',
-        content: 'Garifuna music is an ethnic music and dance with African and Arawak elements, originated by an Afro Indigenous group known as the Garifuna people, pre to their exile to Central America from Saint Vincent And The Grenadines.',
+        content: 'Garifuna music is an ethnic music with African and Arawak elements, originated by an Afro Indigenous group known as the Garifuna people, pre to their exile to Central America from Saint Vincent And The Grenadines.',
         route: '/music'
     },
     {
@@ -37,9 +37,11 @@ const FeatureSections = [
         id: 5,
         image: traditions,
         title: 'Traditions', 
-        content: 'The Garifuna have a rich heritage with roots in both African and local cultures. Their traditional music includes work songs, hymns, lullabies, ballads, and healing songs. It shows an African influence in call-and-response song patterns and complex drum rhythms. Some songs are sung during daily tasks, such as the baking of cassava bread (ereba)',
+        content: 'The Garifuna have a rich heritage with roots in both African and local cultures. Their traditional music includes work songs, hymns, lullabies, ballads, and healing songs. ',
         route: 'traditions'
     },
 ]
 
 export default FeatureSections;
+
+// It shows an African influence in call-and-response song patterns and complex drum rhythms. Some songs are sung during daily tasks, such as the baking of cassava bread (ereba)

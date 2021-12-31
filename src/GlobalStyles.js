@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         list-style: none;
         text-decoration: none;
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
     body{
         color: #000000;
