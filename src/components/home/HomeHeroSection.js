@@ -32,15 +32,16 @@ const HomeHeroSectionStyled = styled.section`
   .heroContainer {
       position: relative;
       text-align: left;
+      /* color: #ffcc00; */
       color: white;
   }
   .bottomLeft {
     border: 2px solid red;
     position: absolute;
-    bottom: 150px;
+    bottom: 50px;
     left: 16px;
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
       }
     button {
         background-color: black;
@@ -49,7 +50,7 @@ const HomeHeroSectionStyled = styled.section`
         border-radius: 0.5rem;
         font-weight: 500;
         transition: 0.3s;
-        margin-top: 1.5rem;
+        margin-right: 1.5rem;
         cursor: pointer;
         border: none;
         outline: none;
