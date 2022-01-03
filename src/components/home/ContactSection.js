@@ -105,7 +105,7 @@ function Contact() {
 
         <button type="submit">
           Send Message
-          <i className="ri-arrow-right-up-line button__icon"></i>
+          <i className="ri-arrow-right-up-line button__icon"/>
         </button>
       </form>
     </div>

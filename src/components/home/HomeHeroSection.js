@@ -5,11 +5,17 @@ import Yurumein from "../../img/images/commerce.jpg";
 function HomeHeroSection() {
   return (
     <HomeHeroSectionStyled>
-      <div className="heroImage">
-        <div className="heroText">
+      <div className="heroContainer">
+        <img src={Yurumein} alt="" />
+        <div className="bottomLeft">
           <h1>Preserving our cultural legacy</h1>
-          <button>Garifuna Culture</button>
-          <button>FAQ's</button>
+          <button>
+            Garifuna Culture{" "}
+            <i className="ri-arrow-right-up-line button__icon" />
+          </button>
+          <button>
+            FAQ's <i className="ri-arrow-right-up-line button__icon" />
+          </button>
         </div>
       </div>
     </HomeHeroSectionStyled>
@@ -19,19 +25,40 @@ function HomeHeroSection() {
 const HomeHeroSectionStyled = styled.section`
   display: flex;
   padding: 0rem 1rem;
-  .heroImage {
+  img {
+      width: 100%;
+      height: 100%;
+  }
+  .heroContainer {
+      position: relative;
+      text-align: left;
+      color: white;
+  }
+  .bottomLeft {
     border: 2px solid red;
-    background-image: url(${Yurumein});
-    height: 100vh;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* position: relative; */
+    position: absolute;
+    bottom: 150px;
+    left: 16px;
+    h1 {
+        font-size: 4rem;
+      }
+    button {
+        background-color: black;
+        color: #ffcc00;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: 0.3s;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        .button__icon {
+          padding-left: 10px;
+        }
+      }
   }
-  .heroText {
-    
-  }
+ 
 `;
 
 export default HomeHeroSection;
