@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import DrumsOfMyFather from "../../img/images/drums.png";
 
-function HomeFeature() {
+function AboutSection() {
   return (
-    <HomeFeatureStyled>
+    <AboutSectionStyled>
       <div className="mainContent">
         <div className="left">
           <div className="heading">
@@ -62,11 +62,11 @@ function HomeFeature() {
           </div>
         </div>
       </div>
-    </HomeFeatureStyled>
+    </AboutSectionStyled>
   );
 }
 
-const HomeFeatureStyled = styled.div`
+const AboutSectionStyled = styled.div`
   margin: 0 auto;
   width: 95%;
   height: 75%;
@@ -95,6 +95,7 @@ const HomeFeatureStyled = styled.div`
       .yurumei {
         letter-spacing: 0.2rem;
         font-weight: bold;
+        font-style: italic;
       }
       .definition {
         font-style: italic;
@@ -152,4 +153,4 @@ const HomeFeatureStyled = styled.div`
   }
 `;
 
-export default HomeFeature;
+export default AboutSection;

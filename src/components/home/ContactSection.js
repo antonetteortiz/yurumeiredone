@@ -139,7 +139,7 @@ function Contact() {
             </span>
             </div>
 
-            <h4 >Write us by mail</h4>
+            <h4 >Send us an email</h4>
             <span>
               <i className="ri-mail-line icon" />
               yurumei@gmail.com
