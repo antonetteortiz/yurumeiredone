@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
-import HomeHeroSection from "../components/home/HomeHeroSection";
+// import HomeHeroSection from "../components/home/HomeHeroSection"
 import AboutSection from "../components/home/AboutSection";
 import FeatureContent from "../components/home/FeatureContent";
 import Questions from "../components/home/faq/Questions";
@@ -11,9 +11,9 @@ function HomePage() {
   return (
     <div>
       <Nav />
-      <HomeHeroSection />
-      <FeatureContent />
+      {/* <HomeHeroSection /> */}
       <AboutSection />
+      <FeatureContent />
       <Questions />
       <Contact />
       <Footer />

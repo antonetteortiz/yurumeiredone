@@ -1,42 +1,133 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../img/logo/yurumeifavicon.svg";
+import axios from "axios";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSuccess, setSuccess] = useState(false);
+  const [hasError, setError] = useState(false);
+  const [postmarkError, setpostmarkError] = useState(false);
+
+  const Subscribe = (e) => {
+    e.preventDefault();
+    // process.env.REACT_APP_API_URL = http://localhost:1987
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/subscribe`, {
+        email,
+      })
+      .then(function (response) {
+        setSuccess(true);
+        setError(false);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+        if (error.response.data.message === "error sending email") {
+          setpostmarkError(true);
+          setError(false);
+        } else {
+          setError(true);
+          setpostmarkError(false);
+        }
+        console.log({ error });
+        setSuccess(false);
+      });
+  };
+
+  const Success = (
+    <div
+      className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
+      role="alert"
+    >
+      <strong className="font-bold">Yay! </strong>
+      <span className="block sm:inline ">
+        You have successfully subscribed to our newsletter.
+      </span>
+    </div>
+  );
+
+  const Warning = (
+    <div
+      className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
+      role="alert"
+    >
+      <strong className="font-bold">Holy smokes! </strong>
+      <span className="block sm:inline">
+        There was a problem creating subscription please try again.
+      </span>
+    </div>
+  );
+
+  const postmarkWarning = (
+    <div
+      className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
+      role="alert"
+    >
+      <strong className="font-bold">Oops, something wasn't right! </strong>
+      <span className="block sm:inline">
+        There was a problem with the email address you provided, please try
+        again.
+      </span>
+    </div>
+  );
+
+  // const subscriptionForm = (
+  //   <div class="subscribe">
+  //     <form onSubmit={Subscribe}>
+  //       <input
+  //         type="email"
+  //         placeholder="Enter your email"
+  //         class="footer__input"
+  //         value={email}
+  //         onChange={(event) => setEmail(event.target.value)}
+  //       />
+
+  //       <button class="button">
+  //         Subscribe
+  //         <i class="ri-arrow-right-up-line button__icon" />
+  //       </button>
+  //     </form>
+  //   </div>
+  // );
+
   return (
     <FooterStyled>
-      <div className="logo">
-        <a className="logo" href="#">
-          <img src={logo} alt="" />
-
-          <h1>YURUMEI</h1>
-        </a>
-      </div>
       <div className="footer_top">
         <div className="quote">
-          <h3>
-            Preserving our <br /> cultural legacy
-          </h3>
+          <div className="logo">
+            <img src={logo} alt="" />
+            <a href="/home">
+              <h1>YURUMEI</h1>
+            </a>
+          </div>
+          <h6>Preserving our cultural legacy.</h6>
         </div>
 
         <div className="footer_info">
-          <h4>Stay Connected</h4>
+          <h2>Stay Connected</h2>
           <p>
-            Join our community and stay connected <br /> by signing up for our
+            Join our community and stay connected by signing up for our
             newsletter
           </p>
           <div class="subscribe">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="footer__input"
-            />
+            {hasError ? Warning : null}
+            {isSuccess ? Success : null}
+            {postmarkError ? postmarkWarning : null}
+            <form onSubmit={Subscribe}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="footer__input"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
 
-            <button class="button">
-              Subscribe
-              <i class="ri-arrow-right-up-line button__icon" />
-            </button>
+              <button class="button">
+                Subscribe
+                <i class="ri-arrow-right-up-line button__icon" />
+              </button>
+            </form>
           </div>
           <div className="social">
             <div className="socialIcon">
@@ -58,7 +149,7 @@ function Footer() {
         </div>
 
         <div className="footer_info">
-          <h4>Contact Us</h4>
+          <h2>Contact Us</h2>
           <ul>
             <li>
               Email:
@@ -68,12 +159,19 @@ function Footer() {
                   href="mailto:yurumei@gmail.com?subject=Yurumei!"
                   className="contact"
                 >
-                  yurumei@gmail.com
+                  <span>
+                    <i className="ri-mail-line icon" />
+                    yurumei@gmail.com
+                  </span>
                 </a>
               </span>
             </li>
             <li>
-              Telephone: <span className="contact">202 358 1789</span>
+              Telephone:
+              <span className="contact">
+                <i className="ri-phone-line icon" />
+                001 917 213 2435
+              </span>
             </li>
             <li>FAQ</li>
           </ul>
@@ -92,25 +190,6 @@ const FooterStyled = styled.div`
   max-height: 500px;
   width: 100%;
   padding: 3rem calc((100vw - 1300px) / 2);
-  .logo {
-    display: inline-block;
-    align-items: center;
-    text-transform: uppercase;
-    transition: 0.3s;
-    img {
-      height: 50px;
-    }
-    h1 {
-      float: right;
-      letter-spacing: 0.5rem;
-      font-size: 2rem;
-      color: #ffcc00;
-      padding-left: 5px;
-    }
-  }
-  h1:hover {
-    color: #ffffff;
-  }
 
   .footer_top {
     display: flex;
@@ -118,10 +197,33 @@ const FooterStyled = styled.div`
     @media screen and (max-width: 768px) {
       flex-direction: column;
     }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+      transition: 0.3s;
+      img {
+        height: 70px;
+      }
+      h1 {
+        /* float: right; */
+        display: inline;
+        letter-spacing: 0.5rem;
+        font-size: 4rem;
+        color: #ffcc00;
+        padding-left: 5px;
+      }
+      h1:hover {
+        color: #ffffff;
+      }
+      p {
+        font-size: 20px;
+        line-height: 4rem;
+      }
+    }
     .quote {
       flex-grow: 2;
-
-      font-family: "Sedgwick Ave", cursive;
+      font-family: "Poppins", cursive;
       /* clamp changes the base font of the page and the size based on the viewport  */
       /* clamp() function takes three comma separated expressions as its parameter, in the order of minimum value, preferred value, maximum value */
       font-size: clamp(1rem, 10vw, 2.9rem);
@@ -130,6 +232,15 @@ const FooterStyled = styled.div`
     .footer_info {
       /* padding: 1rem 0rem; */
       padding: 1rem 4rem;
+      input {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+        margin: 8px 0;
+        border: 0;
+        border-radius: 5px;
+        font-size: 12px;
+      }
     }
     .social {
       font-size: 2rem;
@@ -157,9 +268,13 @@ const FooterStyled = styled.div`
       text-transform: uppercase;
     }
     .contact {
-      font-style: italic;
-      /* color: white; */
       padding-left: 5px;
+      span {
+        padding-left: 5px;
+        .icon {
+          padding: 0px 5px;
+        }
+      }
     }
     .contact::hover {
       color: #ffffff;

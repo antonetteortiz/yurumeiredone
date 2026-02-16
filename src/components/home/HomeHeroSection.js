@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Yurumein from "../../img/images/commerce.jpg";
 
+
 function HomeHeroSection() {
   return (
     <HomeHeroSectionStyled>
@@ -36,7 +37,6 @@ const HomeHeroSectionStyled = styled.section`
       color: white;
   }
   .bottomLeft {
-    border: 2px solid red;
     position: absolute;
     bottom: 50px;
     left: 16px;
