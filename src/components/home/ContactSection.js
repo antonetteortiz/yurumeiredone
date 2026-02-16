@@ -130,15 +130,6 @@ function Contact() {
           </div>
           <h2>We'd Love To Hear From You!</h2>
           <div>
-            <h4 >Call or text us for instant support</h4>
-            <div className="contactInfo">
-
-            <span>
-              <i className="ri-phone-line icon" />
-              001 917 213 2435
-            </span>
-            </div>
-
             <h4 >Send us an email</h4>
             <span>
               <i className="ri-mail-line icon" />
